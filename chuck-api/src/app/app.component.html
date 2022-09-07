@@ -1,0 +1,32 @@
+<!-- Main Content -->
+<div class="main-content">
+
+<!-- Logo -->
+<img src="../assets/img/logo.png" alt="logo">
+<!-- End of Log -->
+
+<!-- Search -->
+<div class="search-content">
+  <input type="text" placeholder="Enter your Search Term" #searchTerm>
+  <button type="button" (click)="searchBySearchTerm(searchTerm.value)">Search</button>
+</div>
+
+<!-- End of Search -->
+
+<!-- Categories -->
+<div class="categories">
+  <span
+   class="category" 
+    *ngFor="let category of categories"
+    (click)="searchByCategory(category)">{{ category }}</span>
+</div>
+<!-- Jokes -->
+<div class="joke-wrapper" *ngFor="let joke of jokes">
+  <div class="joke">
+    <img [src]="joke.icon_url" alt="Icon">
+    <p>{{ joke.value }}</p>
+  </div>
+</div>
+<!-- End of Jokes -->
+
+</div> <!-- End of Main Content -->
